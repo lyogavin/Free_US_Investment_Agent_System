@@ -331,3 +331,20 @@ Additional acknowledgments:
 If you find this project helpful, consider buying me a coffee!
 
 ![Buy Me a Coffee](src/img/ali.png)
+
+## 📱 Follow Us on WeChat
+
+Stay updated with our latest developments and insights! 🌟
+
+Scan the QR code below to follow our WeChat Official Account: **空指针指向量化 Agent**
+
+![WeChat Official Account](src/img/gzh_code.jpg)
+
+Welcome to join our community! We share regular updates on:
+
+- 📈 Trading strategies
+- 🤖 AI developments
+- 📊 Market analysis
+- 💡 Open source project updates
+
+Let's grow together! 🚀
