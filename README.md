@@ -317,15 +317,6 @@ Here's an example of our backtesting results:
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
-
-This project is modified from [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund.git). We sincerely thank the original authors for their excellent work and inspiration.
-
-Additional acknowledgments:
-
-- [yfinance](https://github.com/ranaroussi/yfinance) for market data
-- [AlphaVantage](https://www.alphavantage.co/) for news and sentiment analysis
-
 ## ☕ Support the Project
 
 If you find this project helpful, consider buying me a coffee!
@@ -347,4 +338,23 @@ Welcome to join our community! We share regular updates on:
 - 📊 Market analysis
 - 💡 Open source project updates
 
-Let's grow together! 🚀
+🎁 Follow our WeChat Official Account to get a ¥20 discount coupon for the Planet community!
+
+## 🌟 Join Our Knowledge Planet
+
+Welcome to our exclusive Knowledge Planet community! Here you'll find:
+
+- 🔥 Exclusive trading strategies and resources
+- 👥 Quantitative investment discussions
+- 💡 One-on-one Q&A support
+
+<img src="src/img/planet.jpg" alt="Knowledge Planet QR Code" width="200"/>
+
+## 🙏 Acknowledgments
+
+This project is modified from [ai-hedge-fund](https://github.com/virattt/ai-hedge-fund.git). We sincerely thank the original authors for their excellent work and inspiration.
+
+Additional acknowledgments:
+
+- [yfinance](https://github.com/ranaroussi/yfinance) for market data
+- [AlphaVantage](https://www.alphavantage.co/) for news and sentiment analysis
