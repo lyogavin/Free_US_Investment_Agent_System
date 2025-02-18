@@ -4,11 +4,17 @@ import yfinance as yf
 from datetime import datetime, timedelta
 import random
 import json
+from requests_ratelimiter import LimiterSession, RequestRate, Limiter, Duration
 
+history_rate = RequestRate(1, Duration.SECOND)
+limiter = Limiter(history_rate)
+session = LimiterSession(limiter=limiter)
+
+session.headers['User-agent'] = 'tickerpicker/1.0'
 
 def get_financial_metrics(ticker: str) -> Dict[str, Any]:
     """获取财务指标数据，包含缓存机制和时间戳"""
-    stock = yf.Ticker(ticker)
+    stock = yf.Ticker(ticker, session=session)
     info = stock.info
 
     try:
@@ -94,7 +100,7 @@ def get_financial_metrics(ticker: str) -> Dict[str, Any]:
 
 def get_financial_statements(ticker: str) -> Dict[str, Any]:
     """获取财务报表数据"""
-    stock = yf.Ticker(ticker)
+    stock = yf.Ticker(ticker, session=session)
 
     try:
         financials = stock.financials  # 获取所有财务数据
@@ -141,7 +147,7 @@ def get_financial_statements(ticker: str) -> Dict[str, Any]:
 
 def get_insider_trades(ticker: str) -> List[Dict[str, Any]]:
     """获取内部交易数据"""
-    stock = yf.Ticker(ticker)
+    stock = yf.Ticker(ticker, session=session)
     try:
         # 获取实际的内部交易数据
         insider_trades = stock.insider_trades
@@ -165,7 +171,7 @@ def get_insider_trades(ticker: str) -> List[Dict[str, Any]]:
 
 def get_market_data(ticker: str) -> Dict[str, Any]:
     """获取市场数据"""
-    stock = yf.Ticker(ticker)
+    stock = yf.Ticker(ticker, session=session)
     info = stock.info
 
     return {
@@ -179,7 +185,7 @@ def get_market_data(ticker: str) -> Dict[str, Any]:
 
 def get_price_history(ticker: str, start_date: str = None, end_date: str = None) -> pd.DataFrame:
     """获取历史价格数据，返回与原项目相同格式的数据"""
-    stock = yf.Ticker(ticker)
+    stock = yf.Ticker(ticker, session=session)
 
     # 如果没有提供日期，默认获取过去3个月的数据
     if not end_date:
@@ -234,7 +240,7 @@ def get_price_data(ticker: str, start_date: str, end_date: str) -> pd.DataFrame:
         if start == end:
             end = start + timedelta(days=1)
 
-        stock = yf.Ticker(ticker)
+        stock = yf.Ticker(ticker, session=session)
         df = stock.history(start=start, end=end)
 
         if df.empty:
