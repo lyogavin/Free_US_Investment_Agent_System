@@ -15,6 +15,8 @@ session.headers['User-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1)
 
 proxy = None #'http://customer-%s:%s@pr.oxylabs.io:7777' % ('customer-lyogavin_BRFCu', os.getenv('OX_PASSWORD'))
 
+session = None
+
 
 def get_financial_metrics(ticker: str) -> Dict[str, Any]:
     """获取财务指标数据，包含缓存机制和时间戳"""
