@@ -11,7 +11,7 @@ history_rate = RequestRate(1, Duration.SECOND)
 limiter = Limiter(history_rate)
 session = LimiterSession(limiter=limiter)
 
-session.headers['User-agent'] = 'tickerpicker/1.0'
+session.headers['User-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
 
 proxy = 'http://customer-%s:%s@pr.oxylabs.io:7777' % ('customer-lyogavin_BRFCu', os.getenv('OX_PASSWORD'))
 
