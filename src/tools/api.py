@@ -13,7 +13,7 @@ session = LimiterSession(limiter=limiter)
 
 session.headers['User-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
 
-proxy = 'http://customer-%s:%s@pr.oxylabs.io:7777' % ('customer-lyogavin_BRFCu', os.getenv('OX_PASSWORD'))
+proxy = None #'http://customer-%s:%s@pr.oxylabs.io:7777' % ('customer-lyogavin_BRFCu', os.getenv('OX_PASSWORD'))
 
 
 def get_financial_metrics(ticker: str) -> Dict[str, Any]:
